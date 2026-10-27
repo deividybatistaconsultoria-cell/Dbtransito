@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Procuro parceiro de marketing | DB Consultoria de Trânsito</title>
+<meta name="theme-color" content="#0b1730">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--bg:#0f1e36;--deep:#0b1730;--card:#18305a;--ink:#eef3fa;--mut:#aebfd6;--y:#f5b800;--g:#2fbf71;--r:#e4572e;--line:#2b4a7d;--rad:14px}
+button,input,textarea{font:inherit}
+html,body{min-height:100%}
+body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+.w{max-width:620px;margin:auto;padding:0 18px}
+header{background:var(--deep);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:56px}
+.lg{display:flex;align-items:center;gap:10px;font-weight:700;font-size:12px;letter-spacing:.06em;line-height:1.25}
+.lg i{width:34px;height:34px;border-radius:50%;background:var(--y);color:var(--deep);display:grid;place-items:center;font-style:normal;font-size:13px}
+.b{display:inline-block;border:0;border-radius:var(--rad);padding:13px 18px;font-weight:700;background:var(--y);color:var(--deep);text-decoration:none;cursor:pointer;font-size:15px}
+.b.o{background:none;color:var(--ink);border:2px solid var(--y)}
+.b.sm{padding:8px 12px;font-size:13px}
+.b:disabled{opacity:.4;cursor:not-allowed}
+.hero{background:var(--deep);padding:34px 0 0;text-align:center;border-bottom:10px solid;border-image:repeating-linear-gradient(135deg,#f5b800 0 16px,#0b1730 16px 32px) 10}
+.hero h1{font-size:clamp(26px,7vw,38px);line-height:1.12;margin-bottom:12px}
+.hero p{color:var(--mut);margin-bottom:18px}
+.road{position:relative;height:44px;overflow:hidden}
+.road span{position:absolute;bottom:4px;font-size:28px;animation:dr 10s linear infinite}
+.road:after{content:"";position:absolute;left:0;right:0;bottom:0;border-top:3px dashed var(--line)}
+@keyframes dr{from{left:-12%}to{left:105%}}
+main{padding:24px 0}
+.c{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+.pg{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:6px}
+.pg b{display:block;height:100%;width:0;background:var(--y);transition:width .3s}
+.st{font-size:13px;color:var(--mut);margin-bottom:14px}
+h2{font-size:22px;color:var(--y);margin-bottom:4px;line-height:1.25}
+.sub{color:var(--mut);margin-bottom:14px;font-size:15px}
+label{font-size:14px;color:var(--mut);display:block}
+input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:var(--rad);background:var(--deep);color:var(--ink);margin:4px 0 12px}
+textarea{min-height:96px;resize:vertical}
+.op{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--deep);color:var(--ink);cursor:pointer}
+.op.on{border-color:var(--y);background:#223d6e;box-shadow:inset 4px 0 0 var(--y)}
+.sc{display:flex;gap:8px;margin:10px 0}
+.sc .op{margin:0;text-align:center;padding:13px 0}
+.sl{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.nav{display:flex;gap:10px;margin-top:16px}
+.nav .b{flex:1;text-align:center}
+.err{color:#ffb4a0;font-size:14px;min-height:20px;margin-top:8px}
+.ok{text-align:center}.ok .big{font-size:46px}
+.sm2{font-size:13px;color:var(--mut);margin-top:12px}
+.lead{border:1px solid var(--line);border-radius:var(--rad);background:var(--deep);padding:14px;margin:10px 0;font-size:14px}
+.lead h3{font-size:16px;color:var(--y)}
+.lead p{margin:6px 0;color:var(--ink)}.lead small{color:var(--mut)}
+.hide{display:none!important}
+</style></head><body>
+<header><div class="w"><div class="lg"><i>DB</i><span>DEIVIDY BATISTA<br>CONSULTORIA DE TRÂNSITO</span></div>
+<button class="b o sm hide" id="tabAdm">🔒 Interessados</button></div></header>
+<div class="hero"><div class="w"><h1>Procuro alguém pra tocar o marketing de um projeto 🚦</h1>
+<p>Parceria por projeto, sem horário fixo. São 8 criativos de cerca de 38 segundos, com roteiro e script prontos. A edição fica comigo; você executa com qualidade e entusiasmo, no padrão que eu definir. Valor combinado direto. Responda em 3 minutos.</p><div class="road"><span>🚗</span></div></div></div>
+<main><div class="w">
+<div class="c" id="form"><div class="pg"><b id="bar"></b></div><div class="st" id="st"></div><div id="q"></div><div class="err" id="err"></div>
+<div class="nav"><button class="b o" id="bk">Voltar</button><button class="b" id="nx">Continuar</button></div></div>
+<div class="c ok hide" id="done"><div class="big">🤝</div><h2>Recebi suas respostas!</h2>
+<p class="sub" id="doneMsg"></p><a class="b" id="wa" target="_blank" rel="noopener">Me chamar no WhatsApp</a>
+<p class="sm2">Para agilizar, toque no botão e envie o resumo pronto. Respondo todos os perfis com portfólio.</p></div>
+<div class="c hide" id="adm"><h2>Interessados</h2><p class="sub">Só você vê esta aba.</p><div id="list">Carregando…</div></div>
+</div></main>
+<script>
+var WA="5549991730572";
+var steps=[
+{t:"Vamos nos conhecer",s:"Como posso falar com você?",f:[["nome","Seu nome completo","text"],["whats","Seu WhatsApp com DDD","tel"],["insta","Seu Instagram ou link de portfólio","text"]]},
+{t:"Qual é a sua especialidade?",s:"Escolha a que mais combina com você.",o:"area",opts:["Gravação e direção de cena","Design de carrossel e artes","Social media e gestão de perfil","Roteiro e copy","Faço um pouco de tudo"]},
+{t:"Você já fez conteúdo jurídico?",s:"Pode ser perfil de advogado, escritório, consultoria ou projeto próprio.",o:"jur",opts:["Nunca, mas aprendo rápido","Já fiz conteúdo, mas de outro nicho","Já participei de projeto de conteúdo jurídico","Já atendo ou atendi perfil jurídico"],ta:["jurDet","Conte em poucas linhas o que você fez e deixe o link, se tiver (opcional)"]},
+{t:"Um cliente não gostou da arte",s:"Ele manda: “ficou estranho, refaz tudo”. O que você faz?",o:"cena",opts:["Pergunto o que exatamente não agradou e proponho um ajuste rápido","Refaço do zero para não gerar conflito","Explico minhas escolhas e só mudo se ele insistir","Peço um briefing melhor e combino prazo para a nova versão"]},
+{t:"Como você se sente com o público?",s:"Toque no número que mais combina com você.",sc:[["conf","Conversar com cliente por mensagem ou chamada"],["cam","Aparecer ou gravar vídeo para a câmera"],["rit","Responder comentários e direct do perfil com agilidade"]]},
+{t:"Se apresente como falaria com um cliente novo",s:"Escreva do jeito que você falaria, sem formalidade. Quero ver como você se comunica.",ta:["apres","Escreva em 3 a 4 linhas…"]},
+{t:"Para fechar",s:"Sem horário fixo. O valor combinamos direto, na conversa. O que importa é qualidade e energia, no padrão que eu definir.",ta:["extra","O que te anima nesse projeto? (opcional)"]}
+];
+var i=0,d={},busy=false;
+function $(x){return document.getElementById(x)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){var s=steps[i],h="<h2>"+esc(s.t)+"</h2><p class='sub'>"+esc(s.s)+"</p>";
+(s.f||[]).forEach(function(f){h+="<label>"+esc(f[1])+"<input data-k='"+f[0]+"' type='"+f[2]+"' value='"+esc(d[f[0]])+"'></label>"});
+if(s.opts)s.opts.forEach(function(o){h+="<button class='op"+(d[s.o]==o?" on":"")+"' data-o='"+s.o+"' data-v='"+esc(o)+"'>"+esc(o)+"</button>"});
+if(s.sc)s.sc.forEach(function(c){h+="<label>"+esc(c[1])+"</label><div class='sc'>";for(var n=1;n<=5;n++)h+="<button class='op"+(d[c[0]]==n?" on":"")+"' data-o='"+c[0]+"' data-v='"+n+"'>"+n+"</button>";h+="</div><div class='sl'><span>Pouco à vontade</span><span>Muito à vontade</span></div>"});
+if(s.ta)h+="<label>"+esc(s.ta[1])+"<textarea data-k='"+s.ta[0]+"'>"+esc(d[s.ta[0]])+"</textarea></label>";
+$("q").innerHTML=h;$("err").textContent="";
+$("bar").style.width=((i+1)/steps.length*100)+"%";$("st").textContent="Etapa "+(i+1)+" de "+steps.length;
+$("bk").style.visibility=i?"visible":"hidden";$("nx").textContent=i==steps.length-1?"Enviar respostas":"Continuar"}
+document.addEventListener("click",function(e){var b=e.target.closest(".op");if(!b||!b.dataset.o)return;
+d[b.dataset.o]=b.dataset.v;b.parentNode.querySelectorAll(".op").forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+var s=steps[i];if(s.opts&&!s.ta&&!s.f)setTimeout(function(){if(i==steps.length-1)return;go(1)},250)});
+function save(){document.querySelectorAll("[data-k]").forEach(function(x){d[x.dataset.k]=x.value.trim()})}
+function valid(){save();var s=steps[i];
+if(s.f&&s.f.some(function(f){return f[0]!="insta"&&f[0]!="extra"&&!d[f[0]]}))return"Preencha todos os campos.";
+if(i==0&&d.whats.replace(/\D/g,"").length<10)return"Informe um WhatsApp válido com DDD.";
+if(s.opts&&!d[s.o])return"Escolha uma opção.";
+if(s.sc&&s.sc.some(function(c){return!d[c[0]]}))return"Marque um número em cada linha.";
+if(i==5&&(d.apres||"").length<30)return"Escreva um pouco mais, em pelo menos 30 caracteres.";return""}
+function go(n){if(n>0){var m=valid();if(m){$("err").textContent=m;return}}else save();
+if(n>0&&i==steps.length-1)return send();i=Math.max(0,Math.min(steps.length-1,i+n));render()}
+$("nx").onclick=function(){go(1)};$("bk").onclick=function(){go(-1)};
+function resumo(){return"Olá, Deividy! Respondi o questionário do projeto de marketing.\n\n*Nome:* "+d.nome+"\n*WhatsApp:* "+d.whats+"\n*Portfólio:* "+(d.insta||"-")+"\n*Área:* "+d.area+"\n*Conteúdo jurídico:* "+d.jur+(d.jurDet?" ("+d.jurDet+")":"")+"\n*Cliente insatisfeito:* "+d.cena+"\n*Conforto (1-5):* cliente "+d.conf+", câmera "+d.cam+", ritmo no direct "+d.rit+"\n*Apresentação:* "+d.apres+(d.extra?"\n*O que me anima:* "+d.extra:"")}
+async function send(){if(busy)return;busy=true;$("nx").disabled=true;$("nx").textContent="Enviando…";
+d.data=new Date().toISOString();d.status="novo";
+try{var c=window.claude&&await window.claude.use("db");if(c)await c.collection("leads").add(JSON.parse(JSON.stringify(d)))}catch(e){}
+$("wa").href="https://wa.me/"+WA+"?text="+encodeURIComponent(resumo());
+$("doneMsg").textContent="Obrigado, "+d.nome.split(" ")[0]+"! Falta só um passo: mande o resumo no meu WhatsApp.";
+$("form").classList.add("hide");$("done").classList.remove("hide");busy=false}
+async function admin(){var h="";try{var c=await window.claude.use("db");var s=await c.collection("leads").orderBy("data","desc").get();
+s.docs.forEach(function(x){var l=x.data();var n=String(l.whats||"").replace(/\D/g,"");if(n.length<=11)n="55"+n;
+h+="<div class='lead'><h3>"+esc(l.nome)+"</h3><small>"+esc(new Date(l.data).toLocaleString("pt-BR"))+" · "+esc(l.area)+"</small><p>⚖️ "+esc(l.jur)+(l.jurDet?" – "+esc(l.jurDet):"")+"</p><p>💬 Conforto: cliente "+esc(l.conf)+" · câmera "+esc(l.cam)+" · direct "+esc(l.rit)+"</p><p>🗣️ "+esc(l.cena)+"</p><p>“"+esc(l.apres)+"”</p><p>⏱️ "+esc(l.horas)+" · "+esc(l.prazo)+" · 💰 "+esc(l.valor)+"</p><p>📲 "+esc(l.insta)+"</p><a class='b sm' target='_blank' rel='noopener' href='https://wa.me/"+n+"'>WhatsApp: "+esc(l.whats)+"</a></div>"});
+if(!h)h="Nenhum interessado ainda."}catch(e){h="Não consegui carregar a lista agora."}$("list").innerHTML=h}
+(async function(){try{var u=await window.claude.use("user");if(u&&await u.isOwner()){$("tabAdm").classList.remove("hide");
+$("tabAdm").onclick=function(){var on=!$("adm").classList.contains("hide");$("adm").classList.toggle("hide");$("form").classList.toggle("hide",!on&&!$("done").classList.contains("hide")?true:false);
+if(on){$("tabAdm").textContent="🔒 Interessados";if($("done").classList.contains("hide"))$("form").classList.remove("hide")}else{$("tabAdm").textContent="← Questionário";$("form").classList.add("hide");$("done").classList.add("hide");admin()}}}}catch(e){}})();
+render();
+</script></body></html>
